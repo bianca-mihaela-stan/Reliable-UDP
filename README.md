@@ -103,7 +103,7 @@ The acknowledgment number is a 4 byte number (unsigned int `!L`). When the recei
 In a real-world situation, the window would be the receiver's way to tell the emitter how many more packets to send based on the free space in its buffer. We simulate this by sending a random window between `0` and `5` with every packet.
 
 #### Adaptive timeout
-<img src="/src/graph.png" alt="adaptive timeout graph">
+<img src="graph.png" alt="adaptive timeout graph">
 
 We used the adaptive timeout used in TCP:
 - `SRTT[n+1] = 0.9*SRTT[n] + 0.1*RTT[n+1]`
@@ -115,7 +115,7 @@ where:
 - `Svar[n]` is the smooth variation up until packet `n`
 
 #### Sliding window go-back-n approach
-<img src="/src/sliding_window.gif" alt="sliding window animation">
+<img src="sliding_window.gif" alt="sliding window animation">
 We adapted the above approach of the sliding window algorithm to communicate with the receiver and take into account the window size sent by the receiver. When there's a timeout, we resend a window of size W, where W is the last window we received from the receiver.
 
 
